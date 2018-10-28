@@ -1,6 +1,7 @@
 
 const assert = require('assert');
 const sumOfOther = require('./src/sumOfOther.js');
+const recursion = require('./src/recursion.js');
 const { make, sum } = require('./src/make.js');
 
 
@@ -38,6 +39,11 @@ describe('CodeJam-3 CoreJS', function() {
     it('5', function(){
       assert.deepEqual(1221,  make(1,2,3,4,5,6)(100)(200)(100)(200)(100)(200)(100)(200)(sum) );
     });
+  });
+  describe('function "recursion"', function() {
+    it('1', function(){
+      assert.deepEqual( [[100], [90, 120], [70,99,110,130]],  recursion({"value":100,"left":{"value":90,"left":{"value":70},"right":{"value":99}},"right":{"value":120,"left":{"value":110},"right":{"value":130}}}) );
+    });    
   });
 });
 
